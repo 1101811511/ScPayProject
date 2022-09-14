@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:binding="http://schemas.android.com/apk/res-auto">
+
+    <data>
+<!--        <import type="com.sc.pay.project.viewModel.OrderFragmentViewModel"-->
+        <variable
+            name="orderModel"
+            type="com.sc.pay.project.viewModel.OrderFragmentViewModel" />
+    </data>
+
+    <LinearLayout
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent"
+        android:background="@color/white"
+        android:orientation="vertical">
+
+        <include
+            binding:titleClick="@{(view)->orderModel.onClick(view)}"
+            android:id="@+id/tab_title"
+            layout="@layout/layout_title" />
+
+        <RelativeLayout
+            android:layout_width="fill_parent"
+            android:layout_height="48.0dip"
+            android:layout_marginLeft="22.0dip"
+            android:layout_marginTop="100dp"
+            android:layout_marginRight="22.0dip"
+            android:layout_marginBottom="5.0dip"
+            android:background="@drawable/selector_white_btn">
+
+            <EditText
+                android:id="@+id/ddzf_orderNo"
+                android:layout_width="fill_parent"
+                android:layout_height="fill_parent"
+                android:layout_centerVertical="true"
+                android:layout_marginLeft="50.0dip"
+                android:layout_marginRight="50.0dip"
+                android:background="@null"
+                android:hint="请输入单号"
+                android:singleLine="true"
+                android:textSize="@dimen/s15p" />
+
+            <LinearLayout
+                android:id="@+id/ddzf_search"
+                android:layout_width="40.0dip"
+                android:layout_height="fill_parent"
+                android:gravity="center"
+                android:padding="8.0dip">
+
+                <ImageView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:src="@mipmap/ddcx_saoma" />
+            </LinearLayout>
+
+        </RelativeLayout>
+
+        <TextView
+            android:onClick="@{(view)->orderModel.onClick(view)}"
+            android:id="@+id/check_commit"
+            android:layout_width="fill_parent"
+            android:layout_height="45.0dip"
+            android:layout_marginLeft="20.0dip"
+            android:layout_marginTop="60.0dip"
+            android:layout_marginRight="20.0dip"
+            android:layout_marginBottom="20.0dip"
+            android:background="@drawable/selector_bull_btn"
+            android:clickable="true"
+            android:gravity="center"
+            android:text="查询"
+            android:textColor="@color/white"
+            android:textSize="@dimen/s17p" />
+
+
+    </LinearLayout>
+</layout>

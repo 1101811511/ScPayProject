@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/navigate"
+    app:startDestination="@id/mainFragment">
+    <fragment
+        tools:layout="@layout/fragment_main"
+        android:id="@+id/mainFragment"
+        android:name="com.sc.pay.project.ui.fragment.MainFragment"
+        android:label="MainFragment" >
+        <action
+            android:id="@+id/action_mainFragment_to_order_pay"
+            app:destination="@+id/orderFragment"
+            app:enterAnim="@anim/slide_to_right"
+            app:exitAnim="@anim/slide_to_left"
+            app:popEnterAnim="@anim/slide_left_from"
+            app:popExitAnim="@anim/slide_right_from"
+            />
+    </fragment>
+    <fragment
+        android:id="@+id/orderFragment"
+        tools:layout="@layout/fragment_order_input"
+        android:name="com.sc.pay.project.ui.fragment.InputOrderFragment"
+        android:label="OrderInputFragment" >
+        <action
+            android:id="@+id/action_orderFragment_to_mainFragment"
+            app:destination="@id/mainFragment" />
+    </fragment>
+
+</navigation>

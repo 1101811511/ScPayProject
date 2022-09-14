@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <data>
+        <variable
+            name="titleClick"
+            type="android.view.View.OnClickListener" />
+
+    </data>
+
+    <RelativeLayout
+        android:id="@+id/main_title"
+        android:layout_width="fill_parent"
+        android:layout_height="@dimen/d52p"
+        android:background="@color/bg_bull_2">
+
+        <ImageView
+            android:id="@+id/main_title_back"
+            android:layout_width="40.0dip"
+            android:layout_height="40.0dip"
+            android:onClick="@{(view)->titleClick.onClick(view)}"
+            android:layout_centerVertical="true"
+            android:src="@mipmap/shezhi_fanhui" />
+
+        <TextView
+            android:id="@+id/main_title_text"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true"
+            android:textColor="@color/white"
+            android:textSize="@dimen/s17p" />
+
+        <TextView
+            android:id="@+id/main_name_text"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentRight="true"
+            android:layout_centerVertical="true"
+            android:layout_marginRight="10.0dip"
+            android:text=""
+            android:textColor="@color/white"
+            android:textSize="@dimen/d14p" />
+
+        <TextView
+            android:id="@+id/main_name_key"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:layout_toLeftOf="@+id/main_name_text"
+            android:text=""
+            android:textColor="@color/white"
+            android:textSize="@dimen/d14p" />
+
+
+    </RelativeLayout>
+</layout>

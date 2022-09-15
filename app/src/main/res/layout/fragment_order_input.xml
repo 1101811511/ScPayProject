@@ -3,10 +3,9 @@
     xmlns:binding="http://schemas.android.com/apk/res-auto">
 
     <data>
-<!--        <import type="com.sc.pay.project.viewModel.OrderFragmentViewModel"-->
         <variable
-            name="orderModel"
-            type="com.sc.pay.project.viewModel.OrderFragmentViewModel" />
+            name="orderFragmentOnclickLis"
+            type="com.sc.pay.project.ui.fragment.InputOrderFragment.OrderOnClickListern" />
     </data>
 
     <LinearLayout
@@ -16,7 +15,7 @@
         android:orientation="vertical">
 
         <include
-            binding:titleClick="@{(view)->orderModel.onClick(view)}"
+            binding:titleClick="@{orderFragmentOnclickLis::orderClickListener}"
             android:id="@+id/tab_title"
             layout="@layout/layout_title" />
 
@@ -42,7 +41,8 @@
                 android:textSize="@dimen/s15p" />
 
             <LinearLayout
-                android:id="@+id/ddzf_search"
+                android:onClick="@{orderFragmentOnclickLis::orderClickListener}"
+                android:id="@+id/ddzf_scan"
                 android:layout_width="40.0dip"
                 android:layout_height="fill_parent"
                 android:gravity="center"
@@ -58,7 +58,7 @@
         </RelativeLayout>
 
         <TextView
-            android:onClick="@{(view)->orderModel.onClick(view)}"
+            android:onClick="@{orderFragmentOnclickLis::orderClickListener}"
             android:id="@+id/check_commit"
             android:layout_width="fill_parent"
             android:layout_height="45.0dip"

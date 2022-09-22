@@ -5,27 +5,43 @@
     android:id="@+id/navigate"
     app:startDestination="@id/mainFragment">
     <fragment
-        tools:layout="@layout/fragment_main"
         android:id="@+id/mainFragment"
         android:name="com.sc.pay.project.ui.fragment.MainFragment"
-        android:label="MainFragment" >
+        android:label="MainFragment"
+        tools:layout="@layout/fragment_main">
         <action
             android:id="@+id/action_mainFragment_to_order_pay"
             app:destination="@+id/orderFragment"
             app:enterAnim="@anim/slide_to_right"
             app:exitAnim="@anim/slide_to_left"
             app:popEnterAnim="@anim/slide_left_from"
-            app:popExitAnim="@anim/slide_right_from"
-            />
+            app:popExitAnim="@anim/slide_right_from" />
     </fragment>
     <fragment
         android:id="@+id/orderFragment"
-        tools:layout="@layout/fragment_order_input"
         android:name="com.sc.pay.project.ui.fragment.InputOrderFragment"
-        android:label="OrderInputFragment" >
+        android:label="OrderInputFragment"
+        tools:layout="@layout/fragment_order_input">
         <action
             android:id="@+id/action_orderFragment_to_mainFragment"
             app:destination="@id/mainFragment" />
+        <action
+            android:id="@+id/action_orderFragment_to_order_detail_fragment"
+            app:destination="@id/order_detail_fragment"
+            app:enterAnim="@anim/slide_to_right"
+            app:exitAnim="@anim/slide_to_left"
+            app:popEnterAnim="@anim/slide_left_from"
+            app:popExitAnim="@anim/slide_right_from" />
     </fragment>
+    <fragment
+        android:id="@+id/order_detail_fragment"
+        android:name="com.sc.pay.project.ui.fragment.OrderDetailFragment"
+        android:label="OrderDetailFragment"
+        tools:layout="@layout/fragment_order_detail" >
+        <action
+            android:id="@+id/action_order_detail_fragment_to_orderFragment"
+            app:destination="@id/orderFragment" />
+    </fragment>
+
 
 </navigation>

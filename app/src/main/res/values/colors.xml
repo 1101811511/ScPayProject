@@ -11,5 +11,8 @@
     <color name="lineColors">#b0999999</color>
     <color name="balck">#b0000000</color>
     <color name="bg_bull_2">#ff0961cc</color>
+    <color name="text_dark1">#333333</color>
+    <color name="fenge_1">#ffe5e5e5</color>
+
 
 </resources>

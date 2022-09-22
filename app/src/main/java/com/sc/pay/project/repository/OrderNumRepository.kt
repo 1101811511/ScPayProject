@@ -1,5 +1,6 @@
 package com.sc.pay.project.repository
 
+import com.sc.pay.project.base.BaseResponse
 import com.sc.pay.project.data.bean.User
 import com.sc.pay.project.data.netWork.Api
 import com.sc.pay.project.data.netWork.RetrofitManager
@@ -11,6 +12,6 @@ import com.sc.pay.project.data.netWork.RetrofitManager
  */
 class OrderNumRepository {
     //查询订单信息
-    suspend fun getOrderInfo(userName: String, pwd: String): User =
-        RetrofitManager.creatApiServices(Api::class.java).getOrderInfo(userName, pwd).data
+    suspend fun getOrderInfo(userName: String, pwd: String): BaseResponse<User> =
+        RetrofitManager.creatApiServices(Api::class.java).getOrderInfo(userName, pwd)
 }

@@ -1,0 +1,321 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+        <variable
+        name="orderDetailClickListener"
+        type="com.sc.pay.project.ui.fragment.OrderDetailFragment.OnDetailClickListener" />
+    </data>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="#f6f6f6"
+        android:orientation="vertical">
+
+        <include
+            android:id="@+id/tab_title"
+            layout="@layout/layout_title" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/px2"
+            android:background="@color/white"
+            android:minHeight="@dimen/px80"
+            android:orientation="horizontal">
+
+            <TextView
+                style="@style/tv_333333_16sp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_vertical"
+                android:layout_marginStart="@dimen/px24"
+                android:textSize="@dimen/def_sml_text_size"
+                android:text="资金性质" />
+
+            <TextView
+                style="@style/tv_333333_16sp"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_vertical"
+                android:layout_marginStart="@dimen/px24"
+                android:layout_marginEnd="@dimen/px24"
+                android:textSize="@dimen/def_sml_text_size"
+                android:layout_weight="1"
+                android:gravity="end"
+                tools:text="测试" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/px2"
+            android:background="@color/white"
+            android:minHeight="@dimen/px80"
+            android:orientation="horizontal">
+
+            <TextView
+                style="@style/tv_333333_16sp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textSize="@dimen/def_sml_text_size"
+                android:layout_gravity="center_vertical"
+                android:layout_marginStart="@dimen/px24"
+                android:text="结算方式" />
+
+            <TextView
+                style="@style/tv_333333_16sp"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_vertical"
+                android:layout_marginStart="@dimen/px24"
+                android:layout_marginEnd="@dimen/px24"
+                android:textSize="@dimen/def_sml_text_size"
+                android:layout_weight="1"
+                android:gravity="end"
+                tools:text="测试" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/px2"
+            android:background="@color/white"
+            android:minHeight="@dimen/px80"
+            android:orientation="horizontal">
+
+            <TextView
+                android:id="@+id/tv_fourth"
+                style="@style/tv_333333_16sp"
+                android:textSize="@dimen/def_sml_text_size"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_vertical"
+                android:layout_marginStart="@dimen/px24"
+                android:text="交款序号" />
+
+            <TextView
+                android:id="@+id/tv_jkxh"
+                style="@style/tv_333333_16sp"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_vertical"
+                android:layout_marginStart="@dimen/px24"
+                android:layout_marginEnd="@dimen/px24"
+                android:textSize="@dimen/def_sml_text_size"
+                android:layout_weight="1"
+                android:gravity="end"
+                tools:text="测试" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:visibility="gone"
+            android:id="@+id/ll_building_no"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/px2"
+            android:background="@color/white"
+            android:minHeight="@dimen/px80"
+            android:orientation="horizontal">
+
+            <TextView
+                style="@style/tv_333333_16sp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textSize="@dimen/def_sml_text_size"
+                android:layout_gravity="center_vertical"
+                android:layout_marginStart="@dimen/px24"
+                android:text="房屋编码" />
+
+            <TextView
+                android:id="@+id/tv_building_no"
+                style="@style/tv_333333_16sp"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_vertical"
+                android:layout_marginStart="@dimen/px24"
+                android:layout_marginEnd="@dimen/px24"
+                android:textSize="@dimen/def_sml_text_size"
+                android:layout_weight="1"
+                android:gravity="end"
+                tools:text="测试" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/px2"
+            android:background="@color/white"
+            android:minHeight="@dimen/px80"
+            android:orientation="horizontal">
+
+            <TextView
+                style="@style/tv_333333_16sp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textSize="@dimen/def_sml_text_size"
+                android:layout_gravity="center_vertical"
+                android:layout_marginStart="@dimen/px24"
+                android:text="合同金额" />
+
+            <TextView
+                android:id="@+id/tv_htje"
+                style="@style/tv_333333_16sp"
+                android:layout_width="0dp"
+                android:textSize="@dimen/def_sml_text_size"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_vertical"
+                android:layout_marginStart="@dimen/px24"
+                android:layout_marginEnd="@dimen/px24"
+                android:layout_weight="1"
+                android:gravity="end"
+                tools:text="测试" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/px2"
+            android:background="@color/white"
+            android:minHeight="@dimen/px80"
+            android:orientation="horizontal">
+
+            <TextView
+                style="@style/tv_333333_16sp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textSize="@dimen/def_sml_text_size"
+                android:layout_gravity="center_vertical"
+                android:layout_marginStart="@dimen/px24"
+                android:text="监管账号" />
+
+            <TextView
+                android:id="@+id/tv_jgzh"
+                style="@style/tv_333333_16sp"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_vertical"
+                android:layout_marginStart="@dimen/px24"
+                android:textSize="@dimen/def_sml_text_size"
+                android:layout_marginEnd="@dimen/px24"
+                android:layout_weight="1"
+                android:gravity="end"
+                tools:text="测试" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/px80"
+            android:layout_marginTop="@dimen/px2"
+            android:background="@color/white"
+            android:orientation="horizontal">
+
+            <TextView
+                style="@style/tv_333333_16sp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textSize="@dimen/def_sml_text_size"
+                android:layout_gravity="center_vertical"
+                android:layout_marginStart="@dimen/px24"
+                android:text="预售人名" />
+
+            <TextView
+                android:id="@+id/tv_ysrmc"
+                style="@style/tv_333333_16sp"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_vertical"
+                android:textSize="@dimen/def_sml_text_size"
+                android:layout_marginStart="@dimen/px24"
+                android:layout_marginEnd="@dimen/px24"
+                android:layout_weight="1"
+                android:gravity="end"
+                tools:text="测试" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/px2"
+            android:background="@color/white"
+            android:minHeight="@dimen/px80"
+            android:orientation="horizontal">
+
+            <TextView
+                style="@style/tv_333333_16sp"
+                android:layout_width="wrap_content"
+                android:textSize="@dimen/def_sml_text_size"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_vertical"
+                android:layout_marginStart="@dimen/px24"
+                android:text="预购人名称" />
+
+            <TextView
+                android:id="@+id/tv_ygrmc"
+                style="@style/tv_333333_16sp"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_vertical"
+                android:layout_marginStart="@dimen/px24"
+                android:textSize="@dimen/def_sml_text_size"
+                android:layout_marginEnd="@dimen/px24"
+                android:layout_weight="1"
+                android:gravity="end"
+                tools:text="测试" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/px2"
+            android:background="@color/white"
+            android:minHeight="@dimen/px80"
+            android:orientation="horizontal">
+
+            <TextView
+                style="@style/tv_333333_16sp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_vertical"
+                android:textSize="@dimen/def_sml_text_size"
+                android:layout_marginStart="@dimen/px24"
+                android:text="监管账户" />
+
+            <TextView
+                android:id="@+id/tv_jgzhmc"
+                style="@style/tv_333333_16sp"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_vertical"
+                android:layout_marginStart="@dimen/px24"
+                android:textSize="@dimen/def_sml_text_size"
+                android:layout_marginEnd="@dimen/px24"
+                android:layout_weight="1"
+                android:gravity="end"
+                tools:text="测试" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+            <Button
+                android:onClick="@{orderDetailClickListener::orderDetailClick}"
+                android:id="@+id/commit_button"
+                android:layout_width="match_parent"
+                android:layout_height="40dp"
+                android:layout_marginLeft="40dp"
+                android:layout_marginTop="15dp"
+                android:layout_marginRight="40dp"
+                android:layout_weight="1"
+                android:background="@drawable/selector_bull_btn"
+                android:text="@string/commit_info"
+                android:textColor="@color/white"
+                android:textSize="@dimen/def_sml_text_size" />
+
+        </LinearLayout>
+    </LinearLayout>
+</layout>

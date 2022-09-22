@@ -1,11 +1,12 @@
 package com.sc.pay.project.ui.fragment
 
+import android.util.Log
 import android.view.View
+import androidx.navigation.fragment.FragmentNavigator
 import com.sc.pay.project.R
 import com.sc.pay.project.base.BaseFragment
 import com.sc.pay.project.databinding.FragmentOrderInputBinding
 import com.sc.pay.project.viewModel.OrderFragmentViewModel
-import com.sc.pay.project.widget.checkConten
 
 /**
  * author : 桶哥二号
@@ -21,9 +22,12 @@ class InputOrderFragment :
     }
 
     override fun initData() {
-        viewModel.getOrderNum().observe(this) { orderNum ->
+        viewModel.orderNum .observe(this) { orderNum ->
             db.ddzfOrderNo.setText(orderNum)
             db.ddzfOrderNo.setSelection(orderNum.length)
+        }
+        viewModel.user.observe(this){
+
         }
         viewModel.startScan()
     }
@@ -33,7 +37,8 @@ class InputOrderFragment :
         fun orderClickListener(view: View) {
             when (view.id) {
 //                db.ddzfOrderNo.checkConten(resources.getString(R.string.order_empty))
-                R.id.check_commit -> viewModel.getOrderInfo("xijianyu6","123123")
+//                viewModel.getOrderInfo("xijianyu","123123")
+                R.id.check_commit -> navigation().navigate(R.id.action_orderFragment_to_order_detail_fragment)
                 R.id.main_title_back -> naback()
                 R.id.ddzf_scan -> viewModel.startScan()
             }

@@ -21,16 +21,6 @@ import okhttp3.internal.http.HttpHeaders;
 import okio.Buffer;
 
 /**
- * ================================================
- * 作    者：jeasonlzy（廖子尧）Github地址：https://github.com/jeasonlzy
- * 版    本：1.0
- * 创建日期：2016/1/12
- * 描    述：OkHttp拦截器，主要用于打印日志
- * 修订历史：
- * ================================================
- */
-
-/**
  * 别人优秀的日志输出工具
  */
 public class HttpLoggingInterceptor implements Interceptor {
@@ -53,7 +43,8 @@ public class HttpLoggingInterceptor implements Interceptor {
     }
 
     public void setPrintLevel(Level level) {
-        if (printLevel == null) throw new NullPointerException("printLevel == null. Use Level.NONE instead.");
+        if (printLevel == null)
+            throw new NullPointerException("printLevel == null. Use Level.NONE instead.");
         printLevel = level;
     }
 

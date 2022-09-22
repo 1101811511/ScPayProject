@@ -2,17 +2,16 @@ package com.sc.pay.project.viewModel
 
 import android.os.RemoteException
 import android.util.Log
-import android.view.View
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
 import com.centerm.smartpos.aidl.qrscan.AidlScanCallback
 import com.centerm.smartpos.aidl.qrscan.CameraBeanZbar
-import com.sc.pay.project.R
 import com.sc.pay.project.data.bean.User
 import com.sc.pay.project.repository.OrderNumRepository
 import com.sc.pay.project.scanCode.ScanCodeHelper
-import com.sc.pay.project.ui.fragment.InputOrderFragment
+import com.sc.pay.project.widget.apiCall
+import com.sc.pay.project.widget.showMsg
 import kotlinx.coroutines.launch
 
 /**
@@ -22,23 +21,29 @@ import kotlinx.coroutines.launch
  */
 
 class OrderFragmentViewModel : ViewModel() {
-   private val orderNum:MutableLiveData<String> = MutableLiveData()
-    //测试
-    private val user:MutableLiveData<User> = MutableLiveData()
+     val orderNum: MutableLiveData<String> = MutableLiveData()
+     val user: MutableLiveData<User> = MutableLiveData()
+     val orderNumRes: OrderNumRepository = OrderNumRepository()
 
-    fun getOrderNum():MutableLiveData<String> =orderNum
+    fun getOrderInfo(userName: String, pwd: String) {
+        try {
+            viewModelScope.launch {
+                val  result =  apiCall { orderNumRes.getOrderInfo(userName, pwd) }
+                if (result.errorCode == 0&&result.data!=null){
+                        user.postValue(result.data)
+                }else{
+                    result.errorMsg!!.showMsg()
+                }
 
-    val orderNumRes:OrderNumRepository = OrderNumRepository()
-
-
-    fun getOrderInfo(userName:String,pwd:String){
-        viewModelScope.launch {
-            user.value =orderNumRes.getOrderInfo(userName,pwd)
+            }
+        } catch (e: Exception) {
+            e.printStackTrace()
         }
+
     }
 
 
-    fun startScan(){
+    fun startScan() {
         ScanCodeHelper.getScanServices()
         try {
             val cameraBean = CameraBeanZbar(
@@ -49,19 +54,19 @@ class OrderFragmentViewModel : ViewModel() {
             ScanCodeHelper.mScanDev!!.scanQRCode(cameraBean, object : AidlScanCallback.Stub() {
                 @Throws(RemoteException::class)
                 override fun onCaptured(result: String, i: Int) {
-                    Log.i("111111", "扫码结果：$result")
+                    Log.i("扫码", "扫码结果：$result")
                     orderNum.postValue(result)
                 }
 
                 @Throws(RemoteException::class)
                 override fun onFailed(i: Int) {
-                    Log.i("11111", "扫码失败，错误码：$i")
+                    Log.i("扫码", "扫码失败，错误码：$i")
                 }
             })
         } catch (e: Exception) {
             Log.i("扫码异常：", e.message.toString())
         }
     }
-    }
+}
 
 

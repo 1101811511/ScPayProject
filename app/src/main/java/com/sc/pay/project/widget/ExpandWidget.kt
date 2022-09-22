@@ -10,7 +10,7 @@ import com.sc.pay.project.ScApplicaiton
  * date   : 2022/9/15.
  */
 
-fun TextView.checkConten(errorInfo: String?):String? {
+fun TextView.checkContent(errorInfo: String?):String? {
     val content = text.toString()
     if (content.isBlank()){
         errorInfo?.showMsg()
@@ -18,7 +18,6 @@ fun TextView.checkConten(errorInfo: String?):String? {
     }
     return content
 }
-
 
 fun String.showMsg(duration:Int =Toast.LENGTH_SHORT){
     Toast.makeText(ScApplicaiton.applicationContent,this,Toast.LENGTH_SHORT).show()

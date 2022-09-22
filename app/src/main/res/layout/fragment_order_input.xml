@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <layout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:binding="http://schemas.android.com/apk/res-auto">
+    xmlns:binding="http://schemas.android.com/apk/res-auto"
+    xmlns:app="http://schemas.android.com/tools">
 
     <data>
         <variable
@@ -57,21 +58,44 @@
 
         </RelativeLayout>
 
-        <TextView
-            android:onClick="@{orderFragmentOnclickLis::orderClickListener}"
+<!--        <TextView-->
+<!--            android:onClick="@{orderFragmentOnclickLis::orderClickListener}"-->
+<!--            android:id="@+id/check_commit"-->
+<!--            android:layout_width="fill_parent"-->
+<!--            android:layout_height="45.0dip"-->
+<!--            android:layout_marginLeft="20.0dip"-->
+<!--            android:layout_marginTop="60.0dip"-->
+<!--            android:layout_marginRight="20.0dip"-->
+<!--            android:layout_marginBottom="20.0dip"-->
+<!--            android:background="@drawable/selector_bull_btn"-->
+<!--            android:clickable="true"-->
+<!--            android:gravity="center"-->
+<!--            android:text="查询"-->
+<!--            android:textColor="@color/white"-->
+<!--            android:textSize="@dimen/s17p" />-->
+        <com.flod.loadingbutton.LoadingButton
             android:id="@+id/check_commit"
-            android:layout_width="fill_parent"
-            android:layout_height="45.0dip"
+            android:onClick="@{orderFragmentOnclickLis::orderClickListener}"
+            android:layout_width="match_parent"
+            android:layout_height="45dp"
             android:layout_marginLeft="20.0dip"
             android:layout_marginTop="60.0dip"
             android:layout_marginRight="20.0dip"
             android:layout_marginBottom="20.0dip"
+            android:layout_gravity="center_horizontal"
             android:background="@drawable/selector_bull_btn"
-            android:clickable="true"
+            android:drawablePadding="10dp"
             android:gravity="center"
             android:text="查询"
-            android:textColor="@color/white"
-            android:textSize="@dimen/s17p" />
+            android:textColor="@android:color/white"
+            android:textSize="@dimen/s17p"
+            app:endSuccessDrawable="@drawable/ic_successful"
+            app:endFailDrawable="@drawable/ic_fail"
+            app:radius="5dp"
+            app:enableShrink="true"
+            app:enableRestore="true"
+            app:shrinkShape="Oval"
+            app:loadingDrawablePosition="Start" />
 
 
     </LinearLayout>

@@ -1,5 +1,6 @@
 package com.sc.pay.project.db
 
+import androidx.paging.PagingSource
 import androidx.room.Dao
 import androidx.room.Insert
 import androidx.room.OnConflictStrategy
@@ -18,12 +19,12 @@ interface OrderDao {
      * 插入一条数据
      */
     @Insert(onConflict = OnConflictStrategy.REPLACE)
-    suspend fun insertOrder(orderEntity: OrderEntity)
+      fun insertOrder(orderEntity: OrderEntity)
 
     /**
      * 根据订单号查询
      */
-    @Query("select * from OrderRecord")
-    suspend fun getAllUser(): MutableList<OrderEntity>?
+    @Query("SELECT * FROM OrderRecord WHERE orderNum =:orderNum")
+     fun getOrderRecord(orderNum:String): OrderEntity?
 
 }

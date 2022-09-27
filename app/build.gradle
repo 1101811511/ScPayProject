@@ -2,6 +2,7 @@ plugins {
     id 'com.android.application'
     id 'org.jetbrains.kotlin.android'
     id 'kotlin-parcelize'
+    id 'kotlin-kapt'
 }
 
 android {
@@ -64,8 +65,12 @@ dependencies {
     implementation 'io.github.razerdp:BasePopup:3.2.0'
     implementation 'androidx.lifecycle:lifecycle-runtime-ktx:2.4.0'
     implementation 'androidx.paging:paging-runtime:3.0.0'
-    implementation "androidx.room:room-runtime:2.4.2"
-    annotationProcessor "androidx.room:room-compiler:2.4.2"
+    //room
+    implementation 'androidx.room:room-runtime:2.4.0-alpha03'
+    implementation 'androidx.room:room-common:2.4.0-alpha03'
+    implementation 'androidx.room:room-ktx:2.4.0-alpha03'
+    kapt "androidx.room:room-compiler:2.4.0-alpha03"
+
     implementation project(path: ':localpackage:LoadSir_aar')
 
 

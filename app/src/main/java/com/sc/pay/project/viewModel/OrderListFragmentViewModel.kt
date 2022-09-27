@@ -10,4 +10,5 @@ import com.sc.pay.project.base.BaseViewModel
  *    version: 1.0
  */
 class OrderListFragmentViewModel :BaseViewModel(){
+
 }

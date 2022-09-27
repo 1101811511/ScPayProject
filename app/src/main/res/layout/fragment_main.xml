@@ -6,7 +6,7 @@
     <data>
      <variable
          name="mainFramgentClick"
-         type="com.sc.pay.project.viewModel.MainFragmentViewModel.MainFragmentListener" />
+         type="com.sc.pay.project.ui.fragment.MainFragment.MainFragmentListener" />
 
     </data>
 
@@ -76,7 +76,7 @@
 
         <LinearLayout
             android:layout_width="match_parent"
-            android:layout_height="380dp"
+            android:layout_height="260dp"
             android:orientation="vertical">
 
             <LinearLayout
@@ -90,39 +90,13 @@
                 android:orientation="horizontal">
 
                 <LinearLayout
-                    android:onClick="@{mainFramgentClick::onItemClickListener}"
                     android:id="@+id/order_pay"
                     android:layout_width="0dp"
                     android:layout_height="match_parent"
                     android:layout_marginRight="@dimen/d7p"
                     android:layout_weight="1"
-                    android:background="@mipmap/menu_refund"
-                    android:orientation="vertical"
-                    android:padding="@dimen/d14p">
-
-                    <TextView
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:text="网单"
-                        android:textColor="@color/balck"
-                        android:textSize="@dimen/s20p" />
-
-                    <TextView
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:text="输入网单"
-                        android:textColor="@color/lineColors"
-                        android:textSize="12sp" />
-                </LinearLayout>
-
-                <LinearLayout
-                    android:onClick="@{mainFramgentClick::onItemClickListener}"
-                    android:id="@+id/net_pay"
-                    android:layout_width="0dp"
-                    android:layout_height="match_parent"
-                    android:layout_marginLeft="@dimen/d7p"
-                    android:layout_weight="1"
                     android:background="@mipmap/menu_pay"
+                    android:onClick="@{mainFramgentClick::onItemClickListener}"
                     android:orientation="vertical"
                     android:padding="@dimen/d14p">
 
@@ -141,25 +115,15 @@
                         android:textSize="@dimen/s12p" />
 
                 </LinearLayout>
-            </LinearLayout>
-
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="0dp"
-                android:layout_marginTop="@dimen/d7p"
-                android:layout_marginBottom="@dimen/d7p"
-                android:layout_weight="1"
-                android:orientation="horizontal">
 
                 <LinearLayout
-                    android:onClick="@{mainFramgentClick::onItemClickListener}"
-                    android:id="@+id/check_record"
-                    android:layout_width="match_parent"
+                    android:layout_width="0dp"
                     android:layout_height="match_parent"
-                    android:layout_marginLeft="10dp"
-                    android:layout_marginRight="@dimen/d7p"
+                    android:layout_marginLeft="@dimen/d7p"
+                    android:id="@+id/check_record"
                     android:layout_weight="1"
                     android:background="@mipmap/menu_list"
+                    android:onClick="@{mainFramgentClick::onItemClickListener}"
                     android:orientation="vertical"
                     android:padding="@dimen/d14p">
 
@@ -177,35 +141,8 @@
                         android:textColor="@color/lineColors"
                         android:textSize="@dimen/s12p" />
                 </LinearLayout>
-
-                <LinearLayout
-                    android:onClick="@{mainFramgentClick::onItemClickListener}"
-                    android:id="@+id/print_record"
-                    android:layout_width="match_parent"
-                    android:layout_height="match_parent"
-                    android:layout_marginLeft="@dimen/d7p"
-                    android:layout_marginRight="10dp"
-                    android:layout_weight="1"
-                    android:background="@mipmap/menu_summ"
-                    android:orientation="vertical"
-                    android:padding="@dimen/d14p">
-
-                    <TextView
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:text="打印"
-                        android:textColor="@color/balck"
-                        android:textSize="@dimen/s20p" />
-
-                    <TextView
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:text="交易汇总\n明细"
-                        android:textColor="@color/lineColors"
-                        android:textSize="12sp" />
-
-                </LinearLayout>
             </LinearLayout>
+
 
             <LinearLayout
                 android:layout_width="match_parent"
@@ -216,7 +153,6 @@
                 android:orientation="horizontal">
 
                 <LinearLayout
-                    android:onClick="@{mainFramgentClick::onItemClickListener}"
                     android:id="@+id/check_error"
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
@@ -224,13 +160,14 @@
                     android:layout_marginRight="@dimen/d7p"
                     android:layout_weight="1"
                     android:background="@mipmap/menu_err"
+                    android:onClick="@{mainFramgentClick::onItemClickListener}"
                     android:orientation="vertical"
                     android:padding="@dimen/d14p">
 
                     <TextView
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:text="查询"
+                        android:text="结算"
                         android:textColor="@color/balck"
                         android:textSize="@dimen/s20p" />
 
@@ -244,7 +181,6 @@
                 </LinearLayout>
 
                 <LinearLayout
-                    android:onClick="@{mainFramgentClick::onItemClickListener}"
                     android:id="@+id/check_money"
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
@@ -252,6 +188,7 @@
                     android:layout_marginRight="10dp"
                     android:layout_weight="1"
                     android:background="@mipmap/menu_bal"
+                    android:onClick="@{mainFramgentClick::onItemClickListener}"
                     android:orientation="vertical"
                     android:padding="@dimen/d14p">
 

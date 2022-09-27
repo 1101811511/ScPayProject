@@ -30,7 +30,7 @@ class OrderFragmentViewModel : BaseViewModel() {
     fun registerUser(userName: String, pwd: String, rePwd: String) {
         uiState.value = UiState.Loading
         viewModelScope.launch {
-            val result = apiCall { orderNumRes.registUser(userName, pwd, rePwd) }
+            val result = apiCall { orderNumRes.getOrderInfo(userName, pwd) }
             uiState.value = UiState.LoadEnd
             if (result.errorCode == 0 && result.data != null) {
                 user.postValue(result.data)

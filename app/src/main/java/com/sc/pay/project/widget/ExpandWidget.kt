@@ -3,6 +3,8 @@ package com.sc.pay.project.widget
 import android.widget.TextView
 import android.widget.Toast
 import com.sc.pay.project.ScApplicaiton
+import java.text.SimpleDateFormat
+import java.util.*
 
 /**
  * author : 桶哥二号
@@ -22,3 +24,5 @@ fun TextView.checkContent(errorInfo: String?):String? {
 fun String.showMsg(duration:Int =Toast.LENGTH_SHORT){
     Toast.makeText(ScApplicaiton.applicationContent,this,Toast.LENGTH_SHORT).show()
 }
+
+fun getSysDate(pattern: String?): String? =SimpleDateFormat(pattern).format(Date())

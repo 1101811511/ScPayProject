@@ -1,5 +1,7 @@
 package com.sc.pay.project.ui.fragment
 
+import android.os.Bundle
+import android.os.Parcelable
 import android.util.Log
 import android.view.View
 import androidx.navigation.fragment.FragmentNavigator
@@ -7,6 +9,7 @@ import com.sc.pay.project.R
 import com.sc.pay.project.base.BaseFragment
 import com.sc.pay.project.databinding.FragmentOrderInputBinding
 import com.sc.pay.project.viewModel.OrderFragmentViewModel
+import java.io.Serializable
 
 /**
  * author : 桶哥二号
@@ -28,7 +31,9 @@ class InputOrderFragment :
             db.ddzfOrderNo.setSelection(orderNum.length)
         }
         viewModel.user.observe(this){
-
+            val bundle = Bundle()
+            bundle.putParcelable("result",it as Parcelable)
+            navigation().navigate(R.id.action_orderFragment_to_order_detail_fragment, bundle)
         }
         viewModel.startScan()
     }
@@ -37,8 +42,7 @@ class InputOrderFragment :
     inner class OrderOnClickListern() {
         fun orderClickListener(view: View) {
             when (view.id) {
-//                viewModel.registerUser("xijianyu231","123123","123123")
-                R.id.check_commit -> navigation().navigate(R.id.action_orderFragment_to_order_detail_fragment)
+                R.id.check_commit -> viewModel.registerUser("xijianyu231","123123","123123")
                 R.id.main_title_back -> naback()
                 R.id.ddzf_scan -> viewModel.startScan()
             }

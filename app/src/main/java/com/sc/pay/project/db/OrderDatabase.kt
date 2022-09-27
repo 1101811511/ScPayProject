@@ -14,7 +14,7 @@ import com.sc.pay.project.ScApplicaiton
  *    desc   : 我好难呀，我太难了呀
  *    version: 1.0
  */
-@Database(entities = [OrderEntity::class], version = 1, exportSchema = false)
+@Database(entities = [OrderEntity::class], version = 3, exportSchema = false)
 abstract class OrderDatabase :RoomDatabase() {
     companion object {
         var dataBase: OrderDatabase =

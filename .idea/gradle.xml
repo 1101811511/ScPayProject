@@ -12,6 +12,8 @@
             <option value="$PROJECT_DIR$" />
             <option value="$PROJECT_DIR$/app" />
             <option value="$PROJECT_DIR$/base_xjy" />
+            <option value="$PROJECT_DIR$/localpackage" />
+            <option value="$PROJECT_DIR$/localpackage/LoadSir_aar" />
           </set>
         </option>
         <option name="resolveModulePerSourceSet" value="false" />

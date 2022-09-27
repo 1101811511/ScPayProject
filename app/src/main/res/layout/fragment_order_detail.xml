@@ -33,7 +33,7 @@
                 android:layout_gravity="center_vertical"
                 android:layout_marginStart="@dimen/px24"
                 android:textSize="@dimen/def_sml_text_size"
-                android:text="资金性质" />
+                android:text="订单号" />
 
             <TextView
                 style="@style/tv_333333_16sp"
@@ -45,7 +45,7 @@
                 android:textSize="@dimen/def_sml_text_size"
                 android:layout_weight="1"
                 android:gravity="end"
-                tools:text="测试" />
+                tools:text="缴纳金额" />
         </LinearLayout>
 
         <LinearLayout

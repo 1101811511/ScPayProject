@@ -7,6 +7,8 @@ import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
 import com.centerm.smartpos.aidl.qrscan.AidlScanCallback
 import com.centerm.smartpos.aidl.qrscan.CameraBeanZbar
+import com.sc.pay.project.base.BaseViewModel
+import com.sc.pay.project.common.UiState
 import com.sc.pay.project.data.bean.User
 import com.sc.pay.project.repository.OrderNumRepository
 import com.sc.pay.project.scanCode.ScanCodeHelper
@@ -20,24 +22,22 @@ import kotlinx.coroutines.launch
  * date   : 2022/9/10.
  */
 
-class OrderFragmentViewModel : ViewModel() {
-     val orderNum: MutableLiveData<String> = MutableLiveData()
-     val user: MutableLiveData<User> = MutableLiveData()
-     val orderNumRes: OrderNumRepository = OrderNumRepository()
+class OrderFragmentViewModel : BaseViewModel() {
+    val orderNum: MutableLiveData<String> = MutableLiveData()
+    val user: MutableLiveData<User> = MutableLiveData()
+    val orderNumRes: OrderNumRepository = OrderNumRepository()
 
-    fun getOrderInfo(userName: String, pwd: String) {
-        try {
-            viewModelScope.launch {
-                val  result =  apiCall { orderNumRes.getOrderInfo(userName, pwd) }
-                if (result.errorCode == 0&&result.data!=null){
-                        user.postValue(result.data)
-                }else{
-                    result.errorMsg!!.showMsg()
-                }
-
+    fun registerUser(userName: String, pwd: String, rePwd: String) {
+        uiState.value = UiState.Loading
+        viewModelScope.launch {
+            val result = apiCall { orderNumRes.registUser(userName, pwd, rePwd) }
+            uiState.value = UiState.LoadEnd
+            if (result.errorCode == 0 && result.data != null) {
+                user.postValue(result.data)
+            } else {
+                result.errorMsg!!.showMsg()
             }
-        } catch (e: Exception) {
-            e.printStackTrace()
+
         }
 
     }

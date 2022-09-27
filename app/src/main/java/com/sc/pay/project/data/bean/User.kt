@@ -21,4 +21,5 @@ data class User(
     val token: String = "",
     val type: Int = 0,
     val username: String = ""
+
 ):Parcelable

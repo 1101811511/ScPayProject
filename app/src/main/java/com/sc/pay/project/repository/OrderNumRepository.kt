@@ -14,4 +14,9 @@ class OrderNumRepository {
     //查询订单信息
     suspend fun getOrderInfo(userName: String, pwd: String): BaseResponse<User> =
         RetrofitManager.creatApiServices(Api::class.java).getOrderInfo(userName, pwd)
+
+    //测试接口
+    suspend fun registUser(userName: String, pwd: String, rePwd: String): BaseResponse<User> =
+        RetrofitManager.creatApiServices(Api::class.java).registUser(userName, pwd, rePwd)
+
 }

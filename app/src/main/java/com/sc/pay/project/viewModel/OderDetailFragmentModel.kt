@@ -1,16 +1,16 @@
 package com.sc.pay.project.viewModel
 
-import android.app.Dialog
-import android.view.Gravity
-import android.view.View
-import android.view.ViewGroup
-import android.view.Window
-import android.widget.LinearLayout
-import android.widget.TextView
-import androidx.lifecycle.AndroidViewModel
+import android.content.ActivityNotFoundException
+import android.content.ComponentName
+import android.content.Intent
+import android.content.pm.PackageManager
+import android.os.Bundle
+import android.widget.Toast
+import androidx.core.app.ActivityCompat.startActivityForResult
 import androidx.lifecycle.ViewModel
-import com.sc.pay.project.R
-import com.sc.pay.project.ScApplicaiton
+import com.sc.pay.project.widget.activity_name
+import com.sc.pay.project.widget.package_name
+import com.sc.pay.project.widget.request_pay
 
 /**
  *    author : 桶哥二号

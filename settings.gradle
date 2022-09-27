@@ -19,3 +19,5 @@ dependencyResolutionManagement {
 rootProject.name = "ScPayProject"
 include ':app'
 include ':base_xjy'
+include ':localpackage:LoadSir_aar'
+

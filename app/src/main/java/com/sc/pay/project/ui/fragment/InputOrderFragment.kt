@@ -17,6 +17,7 @@ class InputOrderFragment :
     BaseFragment<FragmentOrderInputBinding, OrderFragmentViewModel>(OrderFragmentViewModel::class.java) {
     override fun getLayoutId() = R.layout.fragment_order_input
     override fun initView() {
+        refreshUiState(viewModel.uiState)
         db.orderFragmentOnclickLis = OrderOnClickListern()
         db.tabTitle.mainTitleText.text = resources.getString(R.string.input_order)
     }
@@ -36,8 +37,7 @@ class InputOrderFragment :
     inner class OrderOnClickListern() {
         fun orderClickListener(view: View) {
             when (view.id) {
-//                db.ddzfOrderNo.checkConten(resources.getString(R.string.order_empty))
-//                viewModel.getOrderInfo("xijianyu","123123")
+//                viewModel.registerUser("xijianyu231","123123","123123")
                 R.id.check_commit -> navigation().navigate(R.id.action_orderFragment_to_order_detail_fragment)
                 R.id.main_title_back -> naback()
                 R.id.ddzf_scan -> viewModel.startScan()

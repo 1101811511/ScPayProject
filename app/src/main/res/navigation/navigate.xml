@@ -16,6 +16,14 @@
             app:exitAnim="@anim/slide_to_left"
             app:popEnterAnim="@anim/slide_left_from"
             app:popExitAnim="@anim/slide_right_from" />
+        <action
+            android:id="@+id/action_mainFragment_to_order_list"
+
+            app:destination="@+id/order_list_fragment"
+            app:enterAnim="@anim/slide_to_right"
+            app:exitAnim="@anim/slide_to_left"
+            app:popEnterAnim="@anim/slide_left_from"
+            app:popExitAnim="@anim/slide_right_from" />
     </fragment>
     <fragment
         android:id="@+id/orderFragment"
@@ -41,6 +49,15 @@
         <action
             android:id="@+id/action_order_detail_fragment_to_orderFragment"
             app:destination="@id/orderFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/order_list_fragment"
+        android:name="com.sc.pay.project.ui.fragment.OrderListFragment"
+        android:label="OrderListFragment"
+        tools:layout="@layout/fragment_order_list"
+        >
+
+
     </fragment>
 
 

@@ -1,6 +1,9 @@
 package com.sc.pay.project.ui.fragment
 
 import android.app.Dialog
+import android.content.ComponentName
+import android.content.Intent
+import android.os.Bundle
 import android.view.Gravity
 import android.view.View
 import android.view.ViewGroup
@@ -11,6 +14,8 @@ import com.sc.pay.project.ScApplicaiton
 import com.sc.pay.project.base.BaseFragment
 import com.sc.pay.project.databinding.FragmentOrderDetailBinding
 import com.sc.pay.project.viewModel.OderDetailFragmentModel
+import com.sc.pay.project.widget.activity_name
+import com.sc.pay.project.widget.package_name
 import com.sc.pay.project.widget.showMsg
 
 /**
@@ -20,23 +25,19 @@ import com.sc.pay.project.widget.showMsg
  *    desc   : 我好难呀，我太难了呀
  *    version: 1.0
  */
-class OrderDetailFragment :BaseFragment<FragmentOrderDetailBinding,OderDetailFragmentModel>(OderDetailFragmentModel::class.java) {
+class OrderDetailFragment :
+    BaseFragment<FragmentOrderDetailBinding, OderDetailFragmentModel>(OderDetailFragmentModel::class.java) {
     override fun initView() {
-        db.orderDetailClickListener =OnDetailClickListener()
+        db.orderDetailClickListener = OnDetailClickListener()
         db.tabTitle.mainTitleText.text = resources.getString(R.string.order_info)
         db.tabTitle.mainTitleBack.visibility = View.INVISIBLE
     }
 
-    override fun getLayoutId()= R.layout.fragment_order_detail
+    override fun getLayoutId() = R.layout.fragment_order_detail
 
-
-
-
-
-
-    inner class OnDetailClickListener{
-        fun orderDetailClick(view:View){
-            when(view.id){
+    inner class OnDetailClickListener {
+        fun orderDetailClick(view: View) {
+            when (view.id) {
                 R.id.commit_button -> payWay()
 
             }
@@ -60,11 +61,11 @@ class OrderDetailFragment :BaseFragment<FragmentOrderDetailBinding,OderDetailFra
             callPay("刷卡")
             payDialog.dismiss()
         }
-        payDialog.findViewById<LinearLayout>(R.id.popup_item_one).setOnClickListener {
+        payDialog.findViewById<LinearLayout>(R.id.popup_item_two).setOnClickListener {
             callPay("主扫")
             payDialog.dismiss()
         }
-        payDialog.findViewById<LinearLayout>(R.id.popup_item_one).setOnClickListener {
+        payDialog.findViewById<LinearLayout>(R.id.popup_item_three).setOnClickListener {
             payDialog.dismiss()
             callPay("被扫")
         }
@@ -73,6 +74,36 @@ class OrderDetailFragment :BaseFragment<FragmentOrderDetailBinding,OderDetailFra
 
 
     private fun callPay(payWay: String) {
+        val  bundle = Bundle()
+        when (payWay) {
+            "刷卡" -> {
+                bundle.putString()
+                "刷卡".showMsg()
+            }
+            "主扫" -> {
+                "主扫".showMsg()
+            }
+            "被扫" -> {
+                "被扫".showMsg()
+            }
+        }
+        val intent = Intent()
+        intent.component = ComponentName(package_name, activity_name)
+        intent.putExtras(bundle!!)
+//        if (getV().getActivity().getPackageManager().resolveActivity(
+//                intent,
+//                PackageManager.MATCH_DEFAULT_ONLY
+//            ) != null
+//        ) {
+//            try {
+//              startActivityForResult(intent, request_pay)
+//            } catch (e: ActivityNotFoundException) {
+//                Toast.makeText(getV().getContext(), "请先安装收单应用！", Toast.LENGTH_SHORT).show()
+//            }
+//        } else {
+//            Toast.makeText(getV().getContext(), "请先安装收单应用！", Toast.LENGTH_SHORT).show()
+//        }
+
 
     }
 }

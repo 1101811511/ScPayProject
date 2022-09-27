@@ -18,7 +18,7 @@ class MainFragmentViewModel:ViewModel() {
        fun onItemClickListener(view: View) {
            when (view.id) {
                R.id.order_pay -> navController.navigate(R.id.action_mainFragment_to_order_pay)
-               R.id.check_error -> "异常订单"
+               R.id.check_record -> navController.navigate(R.id.action_mainFragment_to_order_list)
                R.id.check_money -> "余额查询"
            }
        }

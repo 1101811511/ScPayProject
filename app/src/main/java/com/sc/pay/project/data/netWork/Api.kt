@@ -15,7 +15,23 @@ interface Api {
     /**
      * 查询订单信息
      */
-   @FormUrlEncoded
-   @POST("user/login")
-   suspend fun getOrderInfo(@Field("username") userName:String,@Field("password") pwd:String):BaseResponse<User>
+    @FormUrlEncoded
+    @POST("user/login")
+    suspend fun getOrderInfo(
+        @Field("username") userName: String,
+        @Field("password") pwd: String
+    ): BaseResponse<User>
+
+    /**
+     * 测试
+     */
+    @FormUrlEncoded
+    @POST("user/register")
+    suspend fun registUser(
+        @Field("username") username: String,
+        @Field("password") password: String,
+        @Field("repassword") rePassword: String
+    ): BaseResponse<User>
+
+
 }

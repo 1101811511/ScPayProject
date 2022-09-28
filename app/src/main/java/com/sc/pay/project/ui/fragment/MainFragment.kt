@@ -36,7 +36,7 @@ class MainFragment :
                 position: Int,
                 size: Int
             ) {
-                Glide.with(context!!).load(data).into(holder!!.imageView)
+                Glide.with(requireContext()).load(data).into(holder!!.imageView)
             }
 
         })
@@ -62,14 +62,11 @@ class MainFragment :
 
     private val checkMoney =
         registerForActivityResult(ActivityResultContracts.StartActivityForResult()) { result ->
-            if (result.data?.extras != null) {
+            result.data?.let {
                 if ("00" != result!!.data!!.getStringExtra("resp_code")) {
                     result.data!!.getStringExtra("resp_msg")?.showMsg()
                 }
-            } else {
-                naback()
             }
-
         }
 }
 

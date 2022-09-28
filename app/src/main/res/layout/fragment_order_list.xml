@@ -6,11 +6,127 @@
     </data>
 
     <LinearLayout
-        android:orientation="vertical"
-        android:layout_width="match_parent"
-        android:layout_height="match_parent">
+        android:id="@+id/draw_layout"
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent"
+        android:background="@color/white"
+        android:orientation="vertical">
+
+
         <include
             android:id="@+id/tab_title"
             layout="@layout/layout_title" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="15dp"
+            android:layout_marginTop="@dimen/sml_text_size"
+            android:orientation="horizontal">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:alpha="0.3"
+                android:gravity="center_vertical"
+                android:text="确认状态："
+                android:textColor="@color/bg_bull_2"
+                android:textSize="14sp" />
+
+            <RadioGroup
+                android:id="@+id/mGroup"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+
+                <RadioButton
+                    android:id="@+id/type1"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/type_selector"
+                    android:button="@null"
+                    android:paddingLeft="@dimen/sml_text_size"
+                    android:paddingTop="6dp"
+                    android:paddingRight="@dimen/sml_text_size"
+                    android:paddingBottom="6dp"
+                    android:text="全部"
+                    android:textColor="@color/type_text_selector"
+                    android:textSize="@dimen/def_sml_text_size" />
+
+                <RadioButton
+                    android:id="@+id/type2"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="@dimen/d20p"
+                    android:background="@drawable/type_selector"
+                    android:button="@null"
+                    android:paddingLeft="@dimen/sml_text_size"
+                    android:paddingTop="6dp"
+                    android:paddingRight="@dimen/sml_text_size"
+                    android:paddingBottom="6dp"
+                    android:text="成功"
+                    android:textColor="@color/type_text_selector"
+                    android:textSize="@dimen/def_sml_text_size" />
+
+                <RadioButton
+                    android:id="@+id/type3"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="@dimen/d20p"
+                    android:background="@drawable/type_selector"
+                    android:button="@null"
+                    android:paddingLeft="@dimen/sml_text_size"
+                    android:paddingTop="6dp"
+                    android:paddingRight="@dimen/sml_text_size"
+                    android:paddingBottom="6dp"
+                    android:text="失败"
+                    android:textColor="@color/type_text_selector"
+                    android:textSize="@dimen/def_sml_text_size" />
+
+            </RadioGroup>
+        </LinearLayout>
+
+        <include layout="@layout/date_layout" />
+
+
+        <LinearLayout
+            android:layout_width="fill_parent"
+            android:layout_height="fill_parent"
+            android:background="@color/white"
+            android:orientation="vertical">
+
+
+            <RelativeLayout
+                android:layout_width="fill_parent"
+                android:layout_height="fill_parent"
+                android:background="@color/white">
+
+<!--                <include layout="@layout/layout_jycx_list" />-->
+
+                <LinearLayout
+                    android:id="@+id/nodata_layout"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_centerInParent="true"
+                    android:orientation="vertical">
+
+                    <ImageView
+                        android:layout_gravity="center_horizontal"
+                        android:layout_width="100dp"
+                        android:layout_height="100dp"
+                        android:src="@mipmap/nodata" />
+
+                    <TextView
+                        android:layout_marginBottom="100dp"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="当前条件无数据"
+                        android:textSize="12sp"
+                        android:gravity="center"
+                        android:textColor="@color/bull_bg_a2" />
+
+                </LinearLayout>
+            </RelativeLayout>
+        </LinearLayout>
     </LinearLayout>
 </layout>

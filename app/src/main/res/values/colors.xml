@@ -13,6 +13,9 @@
     <color name="bg_bull_2">#ff0961cc</color>
     <color name="text_dark1">#333333</color>
     <color name="fenge_1">#ffe5e5e5</color>
+    <color name="bull_bg">#ff0961cb</color>
+    <color name="bull_bg_a2">#ea3075c7</color>
+    <color name="C464646">#464646</color>
 
 
 </resources>
